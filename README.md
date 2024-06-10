@@ -30,9 +30,9 @@ Add the following dependency to your pubspec.yaml file:
 
 ```dart
 dependencies:
-flutter:
-sdk: flutter
-your_package_name: ^1.0.0
+  flutter:
+    sdk: flutter
+  nex_common_logs: ^1.0.0
 
 ```
 
