@@ -21,21 +21,20 @@ The AppLogs library provides a utility class for logging messages with different
 
 ## Getting started
 
-Prerequisites
+### Prerequisites
 - Dart
 - Flutter
 
-Installation
+### Installation
 Add the following dependency to your pubspec.yaml file:
 
-```dart
+```yaml
 dependencies:
-  flutter:
-    sdk: flutter
-  nex_common_logs: ^1.0.0
-
+  nex_common_logs:
+    git:
+      url: https://github.com/mehaknexever/nex_common_log.git
+      ref: master
 ```
-
 
 ## Usage
 
@@ -94,7 +93,6 @@ void main() {
 }
 ```
 
-
 ```dart
 class MyClass {
   void performAction() {
@@ -115,9 +113,3 @@ void main() {
   myObject.performAction();
 }
 ```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
