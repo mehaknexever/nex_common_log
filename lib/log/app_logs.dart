@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 import '../logcolor/log_color.dart';
 
 /// A utility class for logging messages with different severity levels.
@@ -64,12 +66,14 @@ class AppLogs {
         return;
       }
     }
-    print(
-      "[${msgColor?.value ?? LogColors.magenta.value} LOG MESSAGE ${LogColors.reset.value}] ${msgColor?.value ?? LogColors.white.value} ${text.toString()} ${LogColors.reset.value}",
-    );
-    print(
-      "[${msgColor?.value ?? LogColors.magenta.value} LOG FILE NAME MESSAGE ${LogColors.reset.value}] ${fileNameColor?.value ?? LogColors.white.value} ${fileName ?? ""} ${LogColors.reset.value}",
-    );
+    if (kDebugMode) {
+      print(
+        "[${msgColor?.value ?? LogColors.magenta.value} LOG MESSAGE ${LogColors.reset.value}] ${msgColor?.value ?? LogColors.white.value} ${text.toString()} ${LogColors.reset.value}",
+      );
+      print(
+        "[${msgColor?.value ?? LogColors.magenta.value} LOG FILE NAME MESSAGE ${LogColors.reset.value}] ${fileNameColor?.value ?? LogColors.white.value} ${fileName ?? ""} ${LogColors.reset.value}",
+      );
+    }
   }
 
   /// Logs an error message with the specified [error], [text], [fileName], and [stackTrace].
@@ -140,18 +144,20 @@ class AppLogs {
         return;
       }
     }
-    print(
-      "[${msgColor?.value ?? LogColors.magenta.value} LOG FILE NAME MESSAGE ${LogColors.reset.value}] ${fileNameColor?.value ?? LogColors.blue.value} ${fileName ?? ""} ${LogColors.reset.value}",
-    );
-    print(
-      "[${msgColor?.value ?? LogColors.magenta.value} LOG MESSAGE ${LogColors.reset.value}] ${textColor?.value ?? LogColors.yellow.value} ${text.toString()} ${LogColors.reset.value}",
-    );
-    print(
-      "[${msgColor?.value ?? LogColors.magenta.value} LOG ERROR MESSAGE ${LogColors.reset.value}] ${errorColor?.value ?? LogColors.yellow.value} ${error.toString()} ${LogColors.reset.value}",
-    );
-    print(
-      "[${msgColor?.value ?? LogColors.magenta.value} LOG STACKTRACE MESSAGE ${LogColors.reset.value}] ${stackTraceColor?.value ?? LogColors.yellow.value} ${stackTrace.toString()} ${LogColors.reset.value}",
-    );
+    if (kDebugMode) {
+      print(
+        "[${msgColor?.value ?? LogColors.magenta.value} LOG FILE NAME MESSAGE ${LogColors.reset.value}] ${fileNameColor?.value ?? LogColors.blue.value} ${fileName ?? ""} ${LogColors.reset.value}",
+      );
+      print(
+        "[${msgColor?.value ?? LogColors.magenta.value} LOG MESSAGE ${LogColors.reset.value}] ${textColor?.value ?? LogColors.yellow.value} ${text.toString()} ${LogColors.reset.value}",
+      );
+      print(
+        "[${msgColor?.value ?? LogColors.magenta.value} LOG ERROR MESSAGE ${LogColors.reset.value}] ${errorColor?.value ?? LogColors.yellow.value} ${error.toString()} ${LogColors.reset.value}",
+      );
+      print(
+        "[${msgColor?.value ?? LogColors.magenta.value} LOG STACKTRACE MESSAGE ${LogColors.reset.value}] ${stackTraceColor?.value ?? LogColors.yellow.value} ${stackTrace.toString()} ${LogColors.reset.value}",
+      );
+    }
   }
 
   /// Logs a warning message with the specified [error], [text], [fileName], and [stackTrace].
@@ -222,18 +228,20 @@ class AppLogs {
         return;
       }
     }
-    print(
-      "[${msgColor?.value ?? LogColors.magenta.value} LOG FILE NAME MESSAGE ${LogColors.reset.value}] ${fileNameColor?.value ?? LogColors.blue.value} ${fileName ?? ""} ${LogColors.reset.value}",
-    );
-    print(
-      "[${msgColor?.value ?? LogColors.magenta.value} LOG MESSAGE ${LogColors.reset.value}] ${textColor?.value ?? LogColors.red.value} ${text.toString()} ${LogColors.reset.value}",
-    );
-    print(
-      "[${msgColor?.value ?? LogColors.magenta.value} LOG ERROR MESSAGE ${LogColors.reset.value}] ${errorColor?.value ?? LogColors.red.value} ${error.toString()} ${LogColors.reset.value}",
-    );
-    print(
-      "[${msgColor?.value ?? LogColors.magenta.value} LOG STACKTRACE MESSAGE ${LogColors.reset.value}] ${stackTraceColor?.value ?? LogColors.red.value} ${stackTrace.toString()} ${LogColors.reset.value}",
-    );
+    if (kDebugMode) {
+      print(
+        "[${msgColor?.value ?? LogColors.magenta.value} LOG FILE NAME MESSAGE ${LogColors.reset.value}] ${fileNameColor?.value ?? LogColors.blue.value} ${fileName ?? ""} ${LogColors.reset.value}",
+      );
+      print(
+        "[${msgColor?.value ?? LogColors.magenta.value} LOG MESSAGE ${LogColors.reset.value}] ${textColor?.value ?? LogColors.red.value} ${text.toString()} ${LogColors.reset.value}",
+      );
+      print(
+        "[${msgColor?.value ?? LogColors.magenta.value} LOG ERROR MESSAGE ${LogColors.reset.value}] ${errorColor?.value ?? LogColors.red.value} ${error.toString()} ${LogColors.reset.value}",
+      );
+      print(
+        "[${msgColor?.value ?? LogColors.magenta.value} LOG STACKTRACE MESSAGE ${LogColors.reset.value}] ${stackTraceColor?.value ?? LogColors.red.value} ${stackTrace.toString()} ${LogColors.reset.value}",
+      );
+    }
   }
 
   /// Logs a success message with the specified [text] and [fileName].
@@ -290,12 +298,14 @@ class AppLogs {
         return;
       }
     }
-    print(
-      "[${msgColor?.value ?? LogColors.magenta.value} LOG MESSAGE ${LogColors.reset.value}] ${textColor?.value ?? LogColors.green.value} ${text.toString()} ${LogColors.reset.value}",
-    );
-    print(
-      "[${msgColor?.value ?? LogColors.magenta.value} LOG FILE NAME MESSAGE ${LogColors.reset.value}] ${fileNameColor?.value ?? LogColors.blue.value} ${fileName ?? ""} ${LogColors.reset.value}",
-    );
+    if (kDebugMode) {
+      print(
+        "[${msgColor?.value ?? LogColors.magenta.value} LOG MESSAGE ${LogColors.reset.value}] ${textColor?.value ?? LogColors.green.value} ${text.toString()} ${LogColors.reset.value}",
+      );
+      print(
+        "[${msgColor?.value ?? LogColors.magenta.value} LOG FILE NAME MESSAGE ${LogColors.reset.value}] ${fileNameColor?.value ?? LogColors.blue.value} ${fileName ?? ""} ${LogColors.reset.value}",
+      );
+    }
   }
 }
 
