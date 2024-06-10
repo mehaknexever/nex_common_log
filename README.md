@@ -11,22 +11,33 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+The AppLogs library provides a utility class for logging messages with different severity levels. This class supports logging messages, errors, warnings, and successes with customizable color formatting. It also respects logging flags and conditions to control when and what to log.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Conditional Logging: Control logging based on enabled flags and screen names.
+- Color-Coded Logs: Customize the color of log messages for better readability.
+- Extension Methods: Convenient methods for logging directly from any object.
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Prerequisites
+- Dart
+- Flutter
+
+Installation
+Add the following dependency to your pubspec.yaml file:
+
+```dart
+dependencies:
+flutter:
+sdk: flutter
+your_package_name: ^1.0.0
+
+```
+
 
 ## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
 
 ```dart
 import 'package:flutter/foundation.dart';
@@ -82,8 +93,6 @@ void main() {
   );
 }
 ```
-
-
 
 
 ```dart
