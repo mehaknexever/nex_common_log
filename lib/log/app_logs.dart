@@ -48,9 +48,9 @@ class AppLogs {
   /// Where `32` represents the color code for green, `34` for blue, `33` for yellow, and `0` for reset.
   ///
   /// Notes:
-  /// - The `LogColors` enum should be predefined with appropriate color codes for use in log messages.
-  /// - The `printHandle` variable should be a boolean value indicating whether to handle print operations.
-  /// - The `AppLogs.screens` should be a collection (e.g., a list) that may contain specific file names to be included in the logs.
+  /// - The [LogColors] enum should be predefined with appropriate color codes for use in log messages.
+  /// - The [printHandle] variable should be a boolean value indicating whether to handle print operations.
+  /// - The [AppLogs.screens] should be a collection (e.g., a list) that may contain specific file names to be included in the logs.
   static void logMessage({
     String? fileName,
     String? text,
@@ -122,9 +122,9 @@ class AppLogs {
   /// Where `31` represents the color code for red, `32` for green, `34` for blue, `33` for yellow, `36` for cyan, and `0` for reset.
   ///
   /// Notes:
-  /// - The `LogColors` enum should be predefined with appropriate color codes for use in log messages.
-  /// - The `printHandle` variable should be a boolean value indicating whether to handle print operations.
-  /// - The `AppLogs.screens` should be a collection (e.g., a list) that may contain specific file names to be included in the logs.
+  /// - The [LogColors] enum should be predefined with appropriate color codes for use in log messages.
+  /// - The [printHandle] variable should be a boolean value indicating whether to handle print operations.
+  /// - The [AppLogs.screens] should be a collection (e.g., a list) that may contain specific file names to be included in the logs.
   static void logError({
     String? fileName,
     String? error,
@@ -206,9 +206,9 @@ class AppLogs {
   /// Where `35` represents the color code for orange, `32` for green, `31` for red, and `0` for reset.
   ///
   /// Notes:
-  /// - The `LogColors` enum should be predefined with appropriate color codes for use in log messages.
-  /// - The `printHandle` variable should be a boolean value indicating whether to handle print operations.
-  /// - The `AppLogs.screens` should be a collection (e.g., a list) that may contain specific file names to be included in the logs.
+  /// - The [LogColors] enum should be predefined with appropriate color codes for use in log messages.
+  /// - The [printHandle] variable should be a boolean value indicating whether to handle print operations.
+  /// - The [AppLogs.screens] should be a collection (e.g., a list) that may contain specific file names to be included in the logs.
   static void logWarning({
     String? fileName,
     String? error,
@@ -280,9 +280,9 @@ class AppLogs {
   /// Where `35` represents the color code for magenta, `32` for green, `34` for blue, and `0` for reset.
   ///
   /// Notes:
-  /// - The `LogColors` enum should be predefined with appropriate color codes for use in log messages.
-  /// - The `printHandle` variable should be a boolean value indicating whether to handle print operations.
-  /// - The `AppLogs.screens` should be a collection (e.g., a list) that may contain specific file names to be included in the logs.
+  /// - The [LogColors] enum should be predefined with appropriate color codes for use in log messages.
+  /// - The [printHandle] variable should be a boolean value indicating whether to handle print operations.
+  /// - The [AppLogs.screens] should be a collection (e.g., a list) that may contain specific file names to be included in the logs.
   static void logSuccess({
     String? fileName,
     String? text,
@@ -315,7 +315,7 @@ extension ErrorLogs on Object {
   ///
   /// The log message is associated with the runtime type of the object.
   void logMessage({String? text, String? fileName}) {
-    AppLogs().logMessage(fileName: runtimeType.toString(), text: text);
+    AppLogs.logMessage(fileName: fileName, text: text);
   }
 
   /// Logs an error with the specified [error], [text], [stackTrace], and [fileName].
@@ -327,8 +327,8 @@ extension ErrorLogs on Object {
     StackTrace? stackTrace,
     String? fileName,
   }) {
-    AppLogs().logError(
-      fileName: runtimeType.toString(),
+    AppLogs.logError(
+      fileName: fileName,
       error: error,
       stackTrace: stackTrace,
       text: text,
@@ -339,7 +339,7 @@ extension ErrorLogs on Object {
   ///
   /// The success message is associated with the runtime type of the object.
   void logSuccess({String? text, String? fileName}) {
-    AppLogs().logMessage(fileName: runtimeType.toString(), text: text);
+    AppLogs.logMessage(fileName: fileName, text: text);
   }
 
   /// Logs a warning with the specified [error], [text], [stackTrace], and [fileName].
@@ -351,8 +351,8 @@ extension ErrorLogs on Object {
     StackTrace? stackTrace,
     String? fileName,
   }) {
-    AppLogs().logWarning(
-      fileName: runtimeType.toString(),
+    AppLogs.logWarning(
+      fileName: fileName,
       error: error,
       stackTrace: stackTrace,
       text: text,

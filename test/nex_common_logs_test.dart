@@ -11,6 +11,7 @@ void main() {
     AppLogs.logError(text: 'SIMPLE ERROR MESSAGE',fileName: 'FILENAME',error: 'ERROR TEXT');
     AppLogs.logWarning(text: 'SIMPLE ERROR MESSAGE',fileName: 'FILENAME',error: 'ERROR TEXT');
     AppLogs.logSuccess(text: 'SIMPLE MESSAGE',fileName: 'TEST CASE');
+    "TESTING".logWarning(text: 'TEXT',fileName: 'FILE NAME',error: 'ERROR');
   });
 }
 
